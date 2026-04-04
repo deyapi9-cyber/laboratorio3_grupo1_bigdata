@@ -1,0 +1,36 @@
+"""
+Módulo que contiene el programa analizador de sensores.
+Permite registrar temperaturas ingresadas por el usuario
+y clasificarlas en categorías según su valor.
+"""
+
+def sensor_analyzer():
+    """
+    Esta función permite ingresar múltiples temperaturas,
+    almacenarlas en una lista y clasificarlas como:
+    Frío, Normal o Caliente según su valor.
+    """
+
+    sensor_readings = []
+
+    number_of_readings = int(input("¿Cuántas lecturas de temperatura desea registrar?: "))
+
+    for i in range(number_of_readings):
+        temperature = float(input(f"Ingrese la temperatura #{i + 1}: "))
+        sensor_readings.append(temperature)
+
+    print("\n--- CLASIFICACIÓN DE TEMPERATURAS ---")
+
+    for temperature in sensor_readings:
+        if temperature < 15:
+            category = "Frío"
+        elif temperature <= 25:
+            category = "Normal"
+        else:
+            category = "Caliente"
+
+        print("Temperatura:", temperature, "- Categoría:", category)
+
+
+
+sensor_analyzer()
